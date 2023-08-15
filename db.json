@@ -127,12 +127,46 @@
       "price": 1157
     },
     {
-      "image": "https://cdn4.ethoswatches.com/the-watch-guide/wp-content/uploads/2023/04/Watches-Under-rupees-5-lakh-featured.jpg",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_e0eabbe4-939a-4eaf-a77d-e3244e267c3a",
       "price": 674
     },
     {
       "image": "https://citizenwatch.widen.net/content/mhlqwmksqr/png/Mickey+Classic.png?u=41zuoe&width=400&height=400&quality=80&crop=false&keep=c&color=FFFFFF00",
       "price": 672
+    }
+  ],
+  "electronics": [
+    {
+      "image": "https://jamesandco.in/cdn/shop/products/1051_c67af6fc-0963-4ca6-b33b-372226868f72_800x.jpg?v=1666344903",
+      "price": 12280
+    },
+    {
+      "image": "https://5.imimg.com/data5/XL/MI/MY-45738738/samsung-washing-machine.jpg",
+      "price": 11680
+    },
+    {
+      "image": "https://images.samsung.com/is/image/samsung/p6pim/in/ua32t4340akxxl/gallery/in-hd-tv-ua32t4340akxxl-front-black-537470101?$650_519_PNG$",
+      "price": 11590
+    },
+    {
+      "image": "https://images.samsung.com/is/image/samsung/ph-hdtv-n4003-ua32n4003arxxp-frontblack-100425777?$650_519_PNG$",
+      "price": 18830
+    },
+    {
+      "image": "https://www.westinghouse.com.au/remote.jpg.ashx?urlb64=aHR0cHM6Ly9yZXNvdXJjZS5lbGVjdHJvbHV4LmNvbS5hdS9wdWJsaWMvaW1hZ2UyL3Byb2R1Y3QvMTEyMDIwLzUyNTkzL1dILVByb2R1Y3Rab29tL3dhc2hpbmdfbWFjaGluZXNfd3d0ODA4NGo3d2FfZ2FsbGVyeV8xLnBuZw&hmac=8QlcaPDTQkM",
+      "price": 17770
+    },
+    {
+      "image": "https://cdn.shopify.com/s/files/1/0049/1005/5514/products/4eEUulPeErqPGe42QXzk3YPcCcSFaG4vdVB6rSX5_512x396.jpg?v=1603275300",
+      "price": 11570
+    },
+    {
+      "image": "https://www.crompton.co.in/wp-content/uploads/2019/07/3-15.png",
+      "price": 674
+    },
+    {
+      "image": "https://5.imimg.com/data5/SA/JZ/MX/SELLER-2694128/whirlpool-refrigerator-71229.jpg",
+      "price": 16720
     }
   ]
 }
