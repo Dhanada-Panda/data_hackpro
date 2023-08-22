@@ -1,14 +1,22 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./payment.css";
 import Submit from "../login/submit";
 
-const PaymentPage = () => {
+const Payment = () => {
   const [paymentOption, setPaymentOption] = useState("");
   const [pinNumber, setPinNumber] = useState("");
   const [pinValid, setPinValid] = useState(true);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [amount, setAmount] = useState(0);
   const navigate = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
+    const totalPrice =
+      parseFloat(location.state.price) * location.state.quantity;
+    setAmount(totalPrice);
+  }, [location.state]);
+  let totalPrice = parseFloat(location.state.price) * location.state.quantity;
 
   const handlePaymentOptionChange = (event) => {
     setPaymentOption(event.target.value);
@@ -20,12 +28,28 @@ const PaymentPage = () => {
     setPinValid(newPin.length === 6);
   };
 
+  const handleAmountChange = (event) => {
+    const newAmount = parseFloat(event.target.value);
+    setAmount(newAmount);
+  };
+
   const handlePayment = () => {
     if (pinValid) {
       setTimeout(() => {
-        setPaymentSuccess(true);
-        alert("Payment successful! 🎉💰");
-        navigate("../login/submit");
+        if (amount <= totalPrice) {
+          setPaymentSuccess(true);
+          if (amount < totalPrice) {
+            const remainingAmount = totalPrice - amount;
+            alert(
+              `Payment successful! 🎉💰\nRemaining amount: $${remainingAmount} you can pay this by cash on delivery process otherwise you will not get the product `
+            );
+          } else {
+            alert("Payment successful! 🎉💰");
+          }
+          navigate("../login/submit");
+        } else {
+          alert("Amount exceeds total price! 💸");
+        }
       }, 2000);
     } else {
       alert("PIN should be a 6 digit number 🔢");
@@ -83,10 +107,27 @@ const PaymentPage = () => {
               )}
             </div>
           )}
+          <div className="amount-input">
+            <label>
+              Enter Amount:
+              <input
+                type="number"
+                value={amount}
+                onChange={handleAmountChange}
+                min="0"
+                max={totalPrice}
+              />
+            </label>
+            {amount > totalPrice && (
+              <p className="amount-validation-error">
+                Amount exceeds total price! 💸
+              </p>
+            )}
+          </div>
           <button
             className="payment-button"
             onClick={handlePayment}
-            disabled={!paymentOption || !pinNumber || !pinValid}
+            disabled={!paymentOption || !pinNumber || !pinValid || amount <= 0}
           >
             Pay Now 💸
           </button>
@@ -96,4 +137,4 @@ const PaymentPage = () => {
   );
 };
 
-export default PaymentPage;
+export default Payment;

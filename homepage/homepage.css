@@ -43,7 +43,13 @@ p {
 .nav-icon {
   max-width: 40px;
 }
-
+.logo h1 {
+  font-size: 2rem;
+}
+.logo h1::first-letter {
+  color: coral;
+  font-size: 3rem;
+}
 .content-section,
 .section {
   display: flex;
@@ -54,6 +60,12 @@ p {
   padding: 2%;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+#home-button{
+  border: 1px solid grey;
+  color: white;
+  background-color: green;
+  border-radius: 5%;
 }
 .content-text,
 .section-content {
